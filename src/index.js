@@ -1,23 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
+import App from './App';
 
-const title = React.createElement('h1', null, 'React ToDo'); 
-const subtile = React.createElement('p', {className: 'subTitle'}, 'React First App'); 
-const container = React.createElement('div', null, title, subtile);
+App.propTypes = {
+    title: PropTypes.string
+};
 
-const app = (<div>
-                <h1>React  !!!!</h1>
-                <p className='subtitle'>React First App</p>
-            </div>)
+App.defaultProps = {
+    title: 'React ToDo'
+};
 
-function App() {
-    return (<div>
-                <h1>React  !!!!</h1>
-                <p className='subtitle'>React First App</p>
-            </div>)
-}
+const Person = (props) => <div> 
+  <h1>{props.firstName} {props.lastName}</h1>
+  {props.country ? <p>Country: {props.country}</p> : null}
+</div>;
 
-//ReactDOM.render(app, document.getElementById('root'));
-ReactDOM.render(<App />, document.getElementById('root'));
+Person.propTypes = {
+  firstName:PropTypes.string,
+  lastName:PropTypes.string,
+  country:PropTypes.string
+};
 
+//ReactDOM.render(<Person firstName="Tetaaa" lastName="Pepa" country="Uk"/>, document.getElementById('root'));//<App title={3}/>
+//ReactDOM.render(<App />, document.getElementById('root'));//
