@@ -13,9 +13,9 @@ App.defaultProps = {
 };
 
 const Person = (props) => <div> 
-  <h1>{props.firstName} {props.lastName}</h1>
-  {props.country ? <p>Country: {props.country}</p> : null}
-</div>;
+                              <h1>{props.firstName} {props.lastName}</h1>
+                              {props.country ? <p>Country: {props.country}</p> : null}
+                          </div>;
 
 Person.propTypes = {
   firstName:PropTypes.string,
